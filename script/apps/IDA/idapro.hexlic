@@ -1,1 +1,141 @@
-{"header":{"version":1},"payload":{"email":"elv@ven","licenses":[{"add_ons":[{"code":"HEXX86","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-01","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXX64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-02","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXARM","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-03","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXARM64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-04","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXMIPS","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-05","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXMIPS64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-06","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXPPC","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-07","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXPPC64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-08","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXRV64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-09","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXARC","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-10","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"},{"code":"HEXARC64","end_date":"2033-12-31 23:59:59","id":"48-1337-DEAD-11","owner":"48-2137-ACAB-99","start_date":"2024-08-10 00:00:00"}],"description":"license","edition_id":"ida-pro","end_date":"2033-12-31 23:59:59","features":[],"id":"48-2137-ACAB-99","issued_on":"2024-08-10 00:00:00","license_type":"named","owner":"","product":"IDA","product_id":"IDAPRO","product_version":"9.1","seats":1,"start_date":"2024-08-10 00:00:00"}],"name":"elf"},"signature":"E70382A9C9FCAAA36CB35DD93C0358FE4A68DBC511115633C7D05783D7FA95D45F7A688F12A91DAFEC2E9DE87BD7527686977306490BA39B45CA40FDD9E4785C730863F8C84573C1BE369DF9BB3DB95C7A7F5C39E8F2031B35BE2FC38C5A8361283871B82250BB04883D133F095DA3CB0A4A5E2DAF94A407597F095328091D0D"}
+{
+  "header": {
+    "version": 1
+  },
+  "payload": {
+    "email": "admin@hex-rays.com",
+    "licenses": [
+      {
+        "add_ons": [
+          {
+            "code": "LUMINA",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-01",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "TEAMS",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-02",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXX86",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-03",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXX64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-04",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXARM",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-05",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXARM64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-06",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXMIPS",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-07",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXMIPS64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-08",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXPPC",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-09",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXPPC64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-10",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXRV",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-11",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXRV64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-12",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXARC",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-13",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXARC64",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-14",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXV850",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-15",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          },
+          {
+            "code": "HEXDALVIK",
+            "end_date": "2033-12-31 23:59:59",
+            "id": "48-1337-B00B-16",
+            "owner": "14-0000-FFFF-88",
+            "start_date": "2025-07-20 00:00:00"
+          }
+        ],
+        "description": "license",
+        "edition_id": "ida-pro",
+        "end_date": "2033-12-31 23:59:59",
+        "features": [],
+        "id": "14-0000-FFFF-88",
+        "issued_on": "2025-07-20 00:00:00",
+        "license_type": "named",
+        "owner": "auth",
+        "product": "IDA",
+        "product_id": "IDAPRO",
+        "product_version": "9.4",
+        "seats": 1,
+        "start_date": "2024-08-10 00:00:00"
+      }
+    ],
+    "name": "auth"
+  },
+  "signature": "328294338C992254EC46A8FB0773820F848FEC14E056192BBA8BB3FD33388E4B4F118306BA057BCBC3AF1902D4C0D65A05BCB16582D3214F44CE4A32A10B539653D369D5077CC38C6AFAF5CEC8E923C085621499DD54EEC99827AF3AA60B0DC1A04365D67B8EA90CC93D8EE3871C216E0CFB8FD4BEE6FBF5658E0B2EDB51109E"
+}

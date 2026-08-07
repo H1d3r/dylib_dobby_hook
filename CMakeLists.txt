@@ -1,4 +1,12 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.24)
+
+# Set the target OS (mac or ios), can be overridden with -DTARGET_OS=...
+# 必须在 project() 之前设置 CMAKE_OSX_ARCHITECTURES 才生效
+if(NOT DEFINED TARGET_OS)
+  set(TARGET_OS "mac")
+endif()
+
+message(STATUS "🎯 Target OS: ${TARGET_OS}")
 
 project(dylib_dobby_hook)
 
@@ -7,7 +15,22 @@ enable_language(C)
 enable_language(CXX)
 enable_language(OBJC)
 enable_language(OBJCXX)
-#enable_language(Swift)
+# Swift: CMake 4.4 原生支持, 需 Ninja/Xcode 生成器 (Unix Makefiles 不支持)
+enable_language(Swift)
+
+
+if(TARGET_OS STREQUAL "mac")
+    message(STATUS "Configuring for macOS")
+    # x86_64;arm64;arm64e
+    set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "14.2")
+else()
+    message(STATUS "Configuring for iOS")
+    set(CMAKE_SYSTEM_NAME "iOS")
+    set(CMAKE_OSX_ARCHITECTURES "arm64;arm64e")
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "18.5")
+endif()
+
 
 message(STATUS "CMake Generator: ${CMAKE_GENERATOR}")
 
@@ -45,26 +68,6 @@ set(LINK_OPTION
         -Xlinker
         -x
 )
-# Set the target OS (mac or ios), can be overridden with -DTARGET_OS=...
-if(NOT DEFINED TARGET_OS)
-  set(TARGET_OS "mac")
-endif()
-
-message(STATUS "🎯 Target OS: ${TARGET_OS}")
-
-if(TARGET_OS STREQUAL "mac")
-    message(STATUS "Configuring for macOS")
-    # x86_64;arm64;arm64e
-    set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
-    set(CMAKE_OSX_DEPLOYMENT_TARGET "14.2")
-else()
-    message(STATUS "Configuring for iOS")
-    set(CMAKE_SYSTEM_NAME "iOS")
-    set(CMAKE_OSX_ARCHITECTURES "arm64;arm64e")
-    set(CMAKE_OSX_DEPLOYMENT_TARGET "18.5")
-    # set_target_properties(${PROJECT_NAME} PROPERTIES XCODE_ATTRIBUTE_SDKROOT "iphoneos")
-endif()
-
 
 file(GLOB Main ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/*.m)
 file(GLOB MainHeader ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/*.h)
@@ -81,7 +84,7 @@ file(GLOB UtilsHeader ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/utils/*.
 
 file(GLOB Apps ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/apps/*.m)
 file(GLOB AppsHeader ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/apps/*.h)
-
+file(GLOB AppsSwift ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/swift/*.swift)
 file(GLOB Helpers ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/helpers/*.m)
 file(GLOB HelpersHeader ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/helpers/*.h)
 
@@ -93,6 +96,7 @@ include_directories(
         ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/utils
         ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/apps
         ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/helpers
+        ${CMAKE_SOURCE_DIR}/dylib_dobby_hook/${TARGET_OS}/swift
 )
 
 add_library(${PROJECT_NAME} SHARED
@@ -100,6 +104,7 @@ add_library(${PROJECT_NAME} SHARED
     ${Common}
     ${Utils}
     ${Apps}
+    ${AppsSwift}
     ${Helpers}
 )
 
@@ -197,7 +202,27 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 
-target_compile_options(${PROJECT_NAME} PRIVATE ${COMPILE_OPTION})
+# COMPILE_OPTION 仅用于 C 系 (Swift 不认 -Wno-int-conversion 等)
+target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<COMPILE_LANGUAGE:C>:${COMPILE_OPTION}>
+    $<$<COMPILE_LANGUAGE:CXX>:${COMPILE_OPTION}>
+    $<$<COMPILE_LANGUAGE:OBJC>:${COMPILE_OPTION}>
+    $<$<COMPILE_LANGUAGE:OBJCXX>:${COMPILE_OPTION}>
+)
+
+# Swift 编译选项 (CMake 原生 Swift; Xcode 生成器用 SWIFT_VERSION build setting)
+if(AppsSwift)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        $<$<COMPILE_LANGUAGE:Swift>:-O>
+    )
+    # Xcode 生成器: Swift 版本 (CMake 原生 Swift 需显式)
+    if(CMAKE_GENERATOR STREQUAL "Xcode")
+        set_target_properties(${PROJECT_NAME} PROPERTIES
+            XCODE_ATTRIBUTE_SWIFT_VERSION "5.0"
+            XCODE_ATTRIBUTE_SWIFT_OPTIMIZATION_LEVEL "-O"
+        )
+    endif()
+endif()
 
 target_link_options(${PROJECT_NAME} PRIVATE ${LINK_OPTION})
 

@@ -27,7 +27,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _backingStore = [[NSUserDefaults alloc] initWithSuiteName:@"MockUbiquitousKeyValueStore"];
-        [self printBackingStoreInfo];
+        // [self printBackingStoreInfo];
     }
     return self;
 }
@@ -104,7 +104,8 @@
 
 - (BOOL)synchronize {
     NSLogger(@"[Mock] synchronize");
-    return [_backingStore synchronize];
+    // return [_backingStore synchronize];
+    return YES;
 }
 
 // 模拟一个 count 方法

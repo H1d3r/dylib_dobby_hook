@@ -12,7 +12,7 @@
 | DevUtils            | 1.*     | ✔   | ✔   | <https://devutils.com/>                                     |     |             |
 | AirBuddy            | 2.*     | ✔   | ✔   | <https://v2.airbuddy.app/download>                          |     |             |
 | Navicat Premium     | 17.*    | ✔   | ✔   | App Store                                                   |     |             |
-| Paste               | 4.*     | ✔   | ✔   | App Store                                                   |     | Hokkaido    |
+| Paste               | 6.*     | ✔   | ✔   | App Store                                                   |     | Hokkaido    |
 | iStat Menus         | 7.*     | ✔   | ✔   | <https://bjango.com/mac/istatmenus/>                        |     | Hokkaido    |
 | Shottr              | 1.*     | ✔   | ✔   | <https://shottr.cc/>                                        |     | Hokkaido    |
 | Transmit            | 5.*     | ✔   | ✔   | <https://panic.com/transmit/#download>                      |     |             |

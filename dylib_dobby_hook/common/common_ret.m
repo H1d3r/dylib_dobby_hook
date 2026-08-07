@@ -157,7 +157,8 @@ void printStackTrace(void) {
             symBuf];
     }
 
-    NSLogger(@"%@", stackTrace);
+//    NSLogger(@"%@", stackTrace);
+    CLogger("%s", [stackTrace UTF8String]);
 #endif
 }
 
@@ -632,8 +633,27 @@ OSStatus hk_SecItemCopyMatching(CFDictionaryRef query, CFTypeRef *result) {
 #pragma clang diagnostic pop
 #endif
 
+NSString *decodeDataStorageString(const void *storage, NSStringEncoding encoding)
+{
+    if (!storage) return nil;
+    uintptr_t addr = (uintptr_t)storage;
+    addr &= 0x3FFFFFFFFFFFFFFFULL;
 
+    uintptr_t buffer = *(uintptr_t *)(addr + 0x10);
+    NSUInteger length = *(NSUInteger *)(addr + 0x18);
 
+    buffer &= 0x3FFFFFFFFFFFFFFFULL;
+
+    if (!buffer || !length)
+        return nil;
+
+    if (encoding == 0)
+        encoding = NSUTF8StringEncoding;
+
+    return [[NSString alloc] initWithBytes:(void *)buffer
+                                    length:length
+                                  encoding:encoding];
+}
 
 NSString *decodeSwiftString(const void *addr)
 {

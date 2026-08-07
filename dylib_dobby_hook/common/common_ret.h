@@ -85,6 +85,15 @@ typedef union {
     };
 } SwiftString;
 
+/*
+    Foundation.__DataStorage 
+    +0x00  isa
+    +0x08  flags / state
+    +0x10  data pointer
+    +0x18  data length
+*/
+#define decodeDataStorageStringU8(storage) decodeDataStorageString(storage, NSUTF8StringEncoding)
+NSString *decodeDataStorageString(const void *storage, NSStringEncoding encoding);
 NSString *decodeSwiftString(const void *addr);
 
 SwiftString makeSwiftString(NSString *imageName, NSString *nsStr);

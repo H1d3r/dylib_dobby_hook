@@ -7,111 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08869D0F2E1AF15900B079A0 /* NotchNook.m in Sources */ = {isa = PBXBuildFile; fileRef = 08869D0E2E1AF15900B079A0 /* NotchNook.m */; };
-		08869D112E1AF16B00B079A0 /* ProgressiveDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 08869D102E1AF16B00B079A0 /* ProgressiveDownloader.m */; };
-		08869D152E1D125100B079A0 /* Bartender.m in Sources */ = {isa = PBXBuildFile; fileRef = 08869D142E1D125100B079A0 /* Bartender.m */; };
-		2847DC932E0E792000D72519 /* DeskWidgetHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2847DC922E0E791A00D72519 /* DeskWidgetHack.m */; };
-		2853DED92E17A39E0045A97A /* LiveWallpaperHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2853DED82E17A39E0045A97A /* LiveWallpaperHack.m */; };
-		2853DEDB2E17A41F0045A97A /* SenPlayerHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2853DEDA2E17A41A0045A97A /* SenPlayerHack.m */; };
-		3816BBB72B54FED80051CF39 /* MemoryUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3816BBB62B54FED80051CF39 /* MemoryUtils.h */; };
-		3816BBB92B54FF090051CF39 /* MemoryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816BBB82B54FF090051CF39 /* MemoryUtils.m */; };
 		381F420E2BFC9FBF00E357AE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 381F420D2BFC9FB900E357AE /* libc++.tbd */; };
-		382A25862B6918DF0083F28C /* PasteHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 382A25842B6918DF0083F28C /* PasteHack.m */; };
 		38350BF62B53F73A00DD52B3 /* dylib_dobby_hook.h in Headers */ = {isa = PBXBuildFile; fileRef = 38350BF52B53F73A00DD52B3 /* dylib_dobby_hook.h */; };
 		38350BF82B53F73A00DD52B3 /* dylib_dobby_hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 38350BF72B53F73A00DD52B3 /* dylib_dobby_hook.m */; };
 		38350C022B53F78900DD52B3 /* tinyhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 38350C012B53F78900DD52B3 /* tinyhook.h */; };
-		38B83E312B5505B300919735 /* TablePlusHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B83E302B5505B300919735 /* TablePlusHack.m */; };
-		38D1AC282B54C9C100E6CB9E /* Constant.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D1AC272B54C9C100E6CB9E /* Constant.h */; };
-		38D1AC2A2B54CA4D00E6CB9E /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1AC292B54CA4D00E6CB9E /* Constant.m */; };
-		38D1AC2C2B54D03B00E6CB9E /* HackProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D1AC2B2B54D03B00E6CB9E /* HackProtocol.h */; };
-		38E2ECD32DC48DCA00D76D10 /* ProxymanHelperHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2ECD22DC48DCA00D76D10 /* ProxymanHelperHack.m */; };
-		6A8CFEF02F18F6EC00FDD9A0 /* loveReadHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CFEEF2F18F6EC00FDD9A0 /* loveReadHack.m */; };
-		9C99D64B2CB6CEF100B8A6D7 /* iStat7Hack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C99D64A2CB6CEF100B8A6D7 /* iStat7Hack.m */; };
-		9CE4C5CE2CCA7AC400593C78 /* ShottrHack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4C5CD2CCA7AC400593C78 /* ShottrHack.m */; };
-		9CE4C5D12CCA7C3600593C78 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4C5D02CCA7C3600593C78 /* JSONUtils.m */; };
-		9CE4C5D22CCA7C3600593C78 /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CE4C5CF2CCA7C3600593C78 /* JSONUtils.h */; };
-		B50E935E2BBD024F0073FEAA /* PaddleBaseHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E935D2BBD024F0073FEAA /* PaddleBaseHack.m */; };
-		B5105EF32E6B1D7400333727 /* MockUbiquitousKeyValueStore.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D6A292E503ED90004D71D /* MockUbiquitousKeyValueStore.h */; };
-		B5105EF42E6B1D7400333727 /* URLSessionHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EAA9DF2C8C3FAF008C4089 /* URLSessionHook.h */; };
-		B5105EF52E6B1D7400333727 /* LocalizationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B513ADD62CB95D0B00F5DC97 /* LocalizationManager.h */; };
-		B5105EF62E6B1D7400333727 /* common_ret.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FECEAB2BC4FC29008916D6 /* common_ret.h */; };
-		B5105EF72E6B1D7400333727 /* EncryptionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B58160162BE88569001DDB9B /* EncryptionUtils.h */; };
-		B5105EF92E6B1D7400333727 /* MockCKContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5B89BCA2C5DD49B00F61EB0 /* MockCKContainer.h */; };
 		B5105EFA2E6B1D7400333727 /* dylib_dobby_hook.h in Headers */ = {isa = PBXBuildFile; fileRef = 38350BF52B53F73A00DD52B3 /* dylib_dobby_hook.h */; };
-		B5105EFB2E6B1D7400333727 /* MockKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = B57584382E0D698A001F7C9E /* MockKeychain.h */; };
-		B5105EFC2E6B1D7400333727 /* MemoryUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3816BBB62B54FED80051CF39 /* MemoryUtils.h */; };
-		B5105EFE2E6B1D7400333727 /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = B5822CA82CBFFC020062383F /* Logger.h */; };
 		B5105EFF2E6B1D7400333727 /* tinyhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 38350C012B53F78900DD52B3 /* tinyhook.h */; };
-		B5105F002E6B1D7400333727 /* CommonRetOC.h in Headers */ = {isa = PBXBuildFile; fileRef = B552CA352C54AC200095C9B9 /* CommonRetOC.h */; };
-		B5105F012E6B1D7400333727 /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CE4C5CF2CCA7C3600593C78 /* JSONUtils.h */; };
-		B5105F022E6B1D7400333727 /* Constant.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D1AC272B54C9C100E6CB9E /* Constant.h */; };
-		B5105F042E6B1D7400333727 /* MockCKDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = B57F200D2C5DD6D700C87201 /* MockCKDatabase.h */; };
-		B5105F062E6B1D7400333727 /* MockCKDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B57F200F2C5DD70700C87201 /* MockCKDatabase.m */; };
-		B5105F0A2E6B1D7400333727 /* MockCKContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B89BCC2C5DD4AB00F61EB0 /* MockCKContainer.m */; };
-		B5105F0F2E6B1D7400333727 /* EncryptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B58160112BE88569001DDB9B /* EncryptionUtils.m */; };
 		B5105F132E6B1D7400333727 /* dylib_dobby_hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 38350BF72B53F73A00DD52B3 /* dylib_dobby_hook.m */; };
-		B5105F202E6B1D7400333727 /* URLSessionHook.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EAA9E12C8C3FC3008C4089 /* URLSessionHook.m */; };
-		B5105F242E6B1D7400333727 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B513ADD82CB95D4100F5DC97 /* LocalizationManager.m */; };
-		B5105F2A2E6B1D7400333727 /* MemoryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816BBB82B54FF090051CF39 /* MemoryUtils.m */; };
-		B5105F302E6B1D7400333727 /* MockUbiquitousKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D6A2B2E503F010004D71D /* MockUbiquitousKeyValueStore.m */; };
-		B5105F332E6B1D7400333727 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4C5D02CCA7C3600593C78 /* JSONUtils.m */; };
-		B5105F362E6B1D7400333727 /* CommonRetOC.m in Sources */ = {isa = PBXBuildFile; fileRef = B552CA372C54AC450095C9B9 /* CommonRetOC.m */; };
-		B5105F372E6B1D7400333727 /* common_ret.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FECEAC2BC4FC29008916D6 /* common_ret.m */; };
-		B5105F382E6B1D7400333727 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D1AC292B54CA4D00E6CB9E /* Constant.m */; };
-		B5105F3E2E6B1D7400333727 /* MockKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = B575843A2E0D69AA001F7C9E /* MockKeychain.m */; };
 		B5105F402E6B1D7400333727 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 381F420D2BFC9FB900E357AE /* libc++.tbd */; };
-		B5105F592E6B28E000333727 /* HackHelperProtocolDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B5105F562E6B27FA00333727 /* HackHelperProtocolDefault.m */; };
-		B5105F5A2E6B28E000333727 /* HackProtocolDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B5105F502E6B27A300333727 /* HackProtocolDefault.m */; };
-		B5105F5B2E6B28F900333727 /* HackHelperProtocolDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = B5105F552E6B27FA00333727 /* HackHelperProtocolDefault.h */; };
-		B5105F5C2E6B28F900333727 /* HackProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B5105F532E6B27E600333727 /* HackProtocol.h */; };
-		B5105F5D2E6B28F900333727 /* HackProtocolDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = B5105F4F2E6B27A300333727 /* HackProtocolDefault.h */; };
-		B5105F5F2E6B298500333727 /* DevHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5105F5E2E6B298500333727 /* DevHack.m */; };
-		B513ADD72CB95D0B00F5DC97 /* LocalizationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B513ADD62CB95D0B00F5DC97 /* LocalizationManager.h */; };
-		B513ADD92CB95D4100F5DC97 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B513ADD82CB95D4100F5DC97 /* LocalizationManager.m */; };
-		B518593F2E6EF716004240CD /* AppInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = B518593E2E6EF716004240CD /* AppInspector.m */; };
-		B52BBA842CBFE1CE00F098A9 /* AirBuddyHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B52BBA832CBFE1CE00F098A9 /* AirBuddyHack.m */; };
-		B52FDA772E7E971B006A6E9D /* InstructionDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B52FDA762E7E971B006A6E9D /* InstructionDecoder.m */; };
-		B52FDA782E7E971B006A6E9D /* InstructionDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B52FDA752E7E971B006A6E9D /* InstructionDecoder.h */; };
-		B52FDA792E7E971B006A6E9D /* InstructionDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B52FDA762E7E971B006A6E9D /* InstructionDecoder.m */; };
-		B52FDA7A2E7E971B006A6E9D /* InstructionDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B52FDA752E7E971B006A6E9D /* InstructionDecoder.h */; };
-		B52FDA7D2E7E978D006A6E9D /* FolderPreviewPro.m in Sources */ = {isa = PBXBuildFile; fileRef = B52FDA7C2E7E978D006A6E9D /* FolderPreviewPro.m */; };
-		B5369DCE2CC4C1D200A81211 /* irvueHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5369DCD2CC4C1D200A81211 /* irvueHack.m */; };
-		B5369DD02CC4C1DF00A81211 /* VidhubHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5369DCF2CC4C1DF00A81211 /* VidhubHack.m */; };
-		B53F9DED2C4AA4EC00A6B32D /* CleanShotXHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F9DEC2C4AA4EC00A6B32D /* CleanShotXHack.m */; };
-		B546A6582BC4F0CD0012338D /* ProxyManHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B546A6572BC4F0CD0012338D /* ProxyManHack.m */; };
-		B552CA362C54AC200095C9B9 /* CommonRetOC.h in Headers */ = {isa = PBXBuildFile; fileRef = B552CA352C54AC200095C9B9 /* CommonRetOC.h */; };
-		B552CA382C54AC450095C9B9 /* CommonRetOC.m in Sources */ = {isa = PBXBuildFile; fileRef = B552CA372C54AC450095C9B9 /* CommonRetOC.m */; };
-		B55407272B653DCB005C08E6 /* NavicatPremiumHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B55407262B653DCB005C08E6 /* NavicatPremiumHack.m */; };
-		B554D7BC2B63F2A300B7EFEA /* DevUtilsHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B554D7BB2B63F2A300B7EFEA /* DevUtilsHack.m */; };
-		B5732BF12C82CD5900EC9E11 /* IDAHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5732BF02C82CD5900EC9E11 /* IDAHack.m */; };
-		B57584392E0D698A001F7C9E /* MockKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = B57584382E0D698A001F7C9E /* MockKeychain.h */; };
-		B575843B2E0D69AA001F7C9E /* MockKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = B575843A2E0D69AA001F7C9E /* MockKeychain.m */; };
-		B57F200E2C5DD6D700C87201 /* MockCKDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = B57F200D2C5DD6D700C87201 /* MockCKDatabase.h */; };
-		B57F20102C5DD70700C87201 /* MockCKDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B57F200F2C5DD70700C87201 /* MockCKDatabase.m */; };
-		B58160172BE88569001DDB9B /* EncryptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B58160112BE88569001DDB9B /* EncryptionUtils.m */; };
-		B581601B2BE88569001DDB9B /* EncryptionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B58160162BE88569001DDB9B /* EncryptionUtils.h */; };
-		B5822CA92CBFFC020062383F /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = B5822CA82CBFFC020062383F /* Logger.h */; };
-		B5938B222DA7E45300FA82B0 /* ishotHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5938B212DA7E45300FA82B0 /* ishotHack.m */; };
-		B59D6A2A2E503ED90004D71D /* MockUbiquitousKeyValueStore.h in Headers */ = {isa = PBXBuildFile; fileRef = B59D6A292E503ED90004D71D /* MockUbiquitousKeyValueStore.h */; };
-		B59D6A2C2E503F010004D71D /* MockUbiquitousKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D6A2B2E503F010004D71D /* MockUbiquitousKeyValueStore.m */; };
-		B5A7D30F2C548B71003D4C7F /* HackProtocolDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7D30E2C548B71003D4C7F /* HackProtocolDefault.h */; };
-		B5A7D3112C548BAB003D4C7F /* HackProtocolDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7D3102C548BAB003D4C7F /* HackProtocolDefault.m */; };
-		B5A7D3142C549130003D4C7F /* ForkLiftHelperHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7D3132C549130003D4C7F /* ForkLiftHelperHack.m */; };
-		B5A7D3172C5491A0003D4C7F /* HackHelperProtocolDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7D3152C5491A0003D4C7F /* HackHelperProtocolDefault.m */; };
-		B5A7D3182C5491A0003D4C7F /* HackHelperProtocolDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7D3162C5491A0003D4C7F /* HackHelperProtocolDefault.h */; };
-		B5ABA1512DB21A5100EE97A0 /* CleanMyMacAgentHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ABA1502DB21A5100EE97A0 /* CleanMyMacAgentHack.m */; };
-		B5B89BCB2C5DD49B00F61EB0 /* MockCKContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5B89BCA2C5DD49B00F61EB0 /* MockCKContainer.h */; };
-		B5B89BCD2C5DD4AB00F61EB0 /* MockCKContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B89BCC2C5DD4AB00F61EB0 /* MockCKContainer.m */; };
-		B5D0C0BB2C4B553500881398 /* ForkLiftHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0C0BA2C4B553500881398 /* ForkLiftHack.m */; };
-		B5D2ED3F2BC0252D0030CBCA /* DevHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2ED3E2BC0252D0030CBCA /* DevHack.m */; };
-		B5EAA9E02C8C3FAF008C4089 /* URLSessionHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EAA9DF2C8C3FAF008C4089 /* URLSessionHook.h */; };
-		B5EAA9E22C8C3FC3008C4089 /* URLSessionHook.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EAA9E12C8C3FC3008C4089 /* URLSessionHook.m */; };
-		B5EC63D82CBD39C700D92EEC /* AlfredHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC63D72CBD39C700D92EEC /* AlfredHack.m */; };
-		B5F06B1D2BEF591E0079E68D /* InfuseHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F06B1C2BEF591E0079E68D /* InfuseHack.m */; };
-		B5FD0D732DB20D1100989564 /* CleanMyMacHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD0D722DB20D1100989564 /* CleanMyMacHack.m */; };
-		B5FE3B862BA2A571001AE437 /* TransmitHack.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE3B842BA2A571001AE437 /* TransmitHack.m */; };
-		B5FECEAD2BC4FC29008916D6 /* common_ret.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FECEAB2BC4FC29008916D6 /* common_ret.h */; };
-		B5FECEAE2BC4FC29008916D6 /* common_ret.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FECEAC2BC4FC29008916D6 /* common_ret.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -136,91 +39,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08869D0E2E1AF15900B079A0 /* NotchNook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotchNook.m; sourceTree = "<group>"; };
-		08869D102E1AF16B00B079A0 /* ProgressiveDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressiveDownloader.m; sourceTree = "<group>"; };
-		08869D142E1D125100B079A0 /* Bartender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bartender.m; sourceTree = "<group>"; };
-		2847DC922E0E791A00D72519 /* DeskWidgetHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeskWidgetHack.m; sourceTree = "<group>"; };
-		2853DED82E17A39E0045A97A /* LiveWallpaperHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveWallpaperHack.m; sourceTree = "<group>"; };
-		2853DEDA2E17A41A0045A97A /* SenPlayerHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenPlayerHack.m; sourceTree = "<group>"; };
-		3816BBB62B54FED80051CF39 /* MemoryUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryUtils.h; sourceTree = "<group>"; };
-		3816BBB82B54FF090051CF39 /* MemoryUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryUtils.m; sourceTree = "<group>"; };
 		381F420D2BFC9FB900E357AE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		382A25842B6918DF0083F28C /* PasteHack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteHack.m; sourceTree = "<group>"; };
 		38350BF22B53F73A00DD52B3 /* libdylib_dobby_hook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libdylib_dobby_hook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		38350BF52B53F73A00DD52B3 /* dylib_dobby_hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dylib_dobby_hook.h; sourceTree = "<group>"; };
 		38350BF72B53F73A00DD52B3 /* dylib_dobby_hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dylib_dobby_hook.m; sourceTree = "<group>"; };
 		38350C012B53F78900DD52B3 /* tinyhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyhook.h; sourceTree = "<group>"; };
 		38350C072B53F96100DD52B3 /* insert_dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = insert_dylib; sourceTree = "<group>"; };
-		38B83E302B5505B300919735 /* TablePlusHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TablePlusHack.m; sourceTree = "<group>"; };
-		38D1AC272B54C9C100E6CB9E /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
-		38D1AC292B54CA4D00E6CB9E /* Constant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
-		38D1AC2B2B54D03B00E6CB9E /* HackProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackProtocol.h; sourceTree = "<group>"; };
-		38E2ECD22DC48DCA00D76D10 /* ProxymanHelperHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProxymanHelperHack.m; sourceTree = "<group>"; };
 		38E793642B6C7FB6005677AA /* auto_hack.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = auto_hack.sh; sourceTree = "<group>"; };
-		6A8CFEEF2F18F6EC00FDD9A0 /* loveReadHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loveReadHack.m; sourceTree = "<group>"; };
-		9C99D64A2CB6CEF100B8A6D7 /* iStat7Hack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iStat7Hack.m; sourceTree = "<group>"; };
-		9CE4C5CD2CCA7AC400593C78 /* ShottrHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShottrHack.m; sourceTree = "<group>"; };
-		9CE4C5CF2CCA7C3600593C78 /* JSONUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
-		9CE4C5D02CCA7C3600593C78 /* JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
-		B50E935D2BBD024F0073FEAA /* PaddleBaseHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddleBaseHack.m; sourceTree = "<group>"; };
 		B5105F462E6B1D7400333727 /* libdylib_dobby_hook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libdylib_dobby_hook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5105F4F2E6B27A300333727 /* HackProtocolDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackProtocolDefault.h; sourceTree = "<group>"; };
-		B5105F502E6B27A300333727 /* HackProtocolDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackProtocolDefault.m; sourceTree = "<group>"; };
-		B5105F532E6B27E600333727 /* HackProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackProtocol.h; sourceTree = "<group>"; };
-		B5105F552E6B27FA00333727 /* HackHelperProtocolDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackHelperProtocolDefault.h; sourceTree = "<group>"; };
-		B5105F562E6B27FA00333727 /* HackHelperProtocolDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackHelperProtocolDefault.m; sourceTree = "<group>"; };
-		B5105F5E2E6B298500333727 /* DevHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevHack.m; sourceTree = "<group>"; };
-		B513ADD62CB95D0B00F5DC97 /* LocalizationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
-		B513ADD82CB95D4100F5DC97 /* LocalizationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
-		B518593E2E6EF716004240CD /* AppInspector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInspector.m; sourceTree = "<group>"; };
-		B52BBA832CBFE1CE00F098A9 /* AirBuddyHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirBuddyHack.m; sourceTree = "<group>"; };
-		B52FDA752E7E971B006A6E9D /* InstructionDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstructionDecoder.h; sourceTree = "<group>"; };
-		B52FDA762E7E971B006A6E9D /* InstructionDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstructionDecoder.m; sourceTree = "<group>"; };
-		B52FDA7C2E7E978D006A6E9D /* FolderPreviewPro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FolderPreviewPro.m; sourceTree = "<group>"; };
-		B5369DCD2CC4C1D200A81211 /* irvueHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = irvueHack.m; sourceTree = "<group>"; };
-		B5369DCF2CC4C1DF00A81211 /* VidhubHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VidhubHack.m; sourceTree = "<group>"; };
-		B53F9DEC2C4AA4EC00A6B32D /* CleanShotXHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanShotXHack.m; sourceTree = "<group>"; };
-		B546A6572BC4F0CD0012338D /* ProxyManHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProxyManHack.m; sourceTree = "<group>"; };
-		B552CA352C54AC200095C9B9 /* CommonRetOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRetOC.h; sourceTree = "<group>"; };
-		B552CA372C54AC450095C9B9 /* CommonRetOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonRetOC.m; sourceTree = "<group>"; };
-		B55407262B653DCB005C08E6 /* NavicatPremiumHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavicatPremiumHack.m; sourceTree = "<group>"; };
-		B554D7BB2B63F2A300B7EFEA /* DevUtilsHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevUtilsHack.m; sourceTree = "<group>"; };
-		B5732BF02C82CD5900EC9E11 /* IDAHack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAHack.m; sourceTree = "<group>"; };
-		B57584382E0D698A001F7C9E /* MockKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockKeychain.h; sourceTree = "<group>"; };
-		B575843A2E0D69AA001F7C9E /* MockKeychain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockKeychain.m; sourceTree = "<group>"; };
 		B57AEDBB2C5009F200B9C5FB /* dtrace_kill.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = dtrace_kill.d; sourceTree = "<group>"; };
 		B57AEDBC2C5009F200B9C5FB /* SMJobBlessUtil-python3.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "SMJobBlessUtil-python3.py"; sourceTree = "<group>"; };
 		B57AEDBD2C5009F200B9C5FB /* mac_patch_helper */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mac_patch_helper; sourceTree = "<group>"; };
-		B57F200D2C5DD6D700C87201 /* MockCKDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockCKDatabase.h; sourceTree = "<group>"; };
-		B57F200F2C5DD70700C87201 /* MockCKDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockCKDatabase.m; sourceTree = "<group>"; };
-		B58160112BE88569001DDB9B /* EncryptionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionUtils.m; sourceTree = "<group>"; };
-		B58160162BE88569001DDB9B /* EncryptionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionUtils.h; sourceTree = "<group>"; };
-		B5822CA82CBFFC020062383F /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
-		B5938B212DA7E45300FA82B0 /* ishotHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ishotHack.m; sourceTree = "<group>"; };
-		B59D6A292E503ED90004D71D /* MockUbiquitousKeyValueStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockUbiquitousKeyValueStore.h; sourceTree = "<group>"; };
-		B59D6A2B2E503F010004D71D /* MockUbiquitousKeyValueStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockUbiquitousKeyValueStore.m; sourceTree = "<group>"; };
-		B5A7D30E2C548B71003D4C7F /* HackProtocolDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackProtocolDefault.h; sourceTree = "<group>"; };
-		B5A7D3102C548BAB003D4C7F /* HackProtocolDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackProtocolDefault.m; sourceTree = "<group>"; };
-		B5A7D3132C549130003D4C7F /* ForkLiftHelperHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForkLiftHelperHack.m; sourceTree = "<group>"; };
-		B5A7D3152C5491A0003D4C7F /* HackHelperProtocolDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackHelperProtocolDefault.m; sourceTree = "<group>"; };
-		B5A7D3162C5491A0003D4C7F /* HackHelperProtocolDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackHelperProtocolDefault.h; sourceTree = "<group>"; };
-		B5ABA1502DB21A5100EE97A0 /* CleanMyMacAgentHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanMyMacAgentHack.m; sourceTree = "<group>"; };
-		B5B89BCA2C5DD49B00F61EB0 /* MockCKContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockCKContainer.h; sourceTree = "<group>"; };
-		B5B89BCC2C5DD4AB00F61EB0 /* MockCKContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockCKContainer.m; sourceTree = "<group>"; };
 		B5BE2D582C52A5E40056B3E2 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		B5BE2D592C52A5E40056B3E2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		B5BE2D5A2C52A5E40056B3E2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B5BE2D5B2C52A5E40056B3E2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B5D0C0BA2C4B553500881398 /* ForkLiftHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForkLiftHack.m; sourceTree = "<group>"; };
-		B5D2ED3E2BC0252D0030CBCA /* DevHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevHack.m; sourceTree = "<group>"; };
-		B5EAA9DF2C8C3FAF008C4089 /* URLSessionHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionHook.h; sourceTree = "<group>"; };
-		B5EAA9E12C8C3FC3008C4089 /* URLSessionHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionHook.m; sourceTree = "<group>"; };
-		B5EC63D72CBD39C700D92EEC /* AlfredHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlfredHack.m; sourceTree = "<group>"; };
-		B5F06B1C2BEF591E0079E68D /* InfuseHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfuseHack.m; sourceTree = "<group>"; };
-		B5FD0D722DB20D1100989564 /* CleanMyMacHack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanMyMacHack.m; sourceTree = "<group>"; };
-		B5FE3B842BA2A571001AE437 /* TransmitHack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitHack.m; sourceTree = "<group>"; };
-		B5FECEAB2BC4FC29008916D6 /* common_ret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common_ret.h; sourceTree = "<group>"; };
-		B5FECEAC2BC4FC29008916D6 /* common_ret.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = common_ret.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -349,142 +182,24 @@
 			sourceTree = "<group>";
 		};
 		B5105EE42E6B122700333727 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				B518593C2E6EF5D4004240CD /* utils */,
-				B5A7D3122C54911C003D4C7F /* helpers */,
-				B581601C2BE8949B001DDB9B /* apps */,
-			);
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
 			path = mac;
 			sourceTree = "<group>";
 		};
 		B5105F4C2E6B277500333727 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				B518593D2E6EF5DD004240CD /* utils */,
-				B5105F4E2E6B278A00333727 /* helpers */,
-				B5105F4D2E6B278600333727 /* apps */,
-			);
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
 			path = ios;
 			sourceTree = "<group>";
 		};
-		B5105F4D2E6B278600333727 /* apps */ = {
-			isa = PBXGroup;
-			children = (
-				B5105F532E6B27E600333727 /* HackProtocol.h */,
-				B5105F4F2E6B27A300333727 /* HackProtocolDefault.h */,
-				B5105F502E6B27A300333727 /* HackProtocolDefault.m */,
-				B5105F5E2E6B298500333727 /* DevHack.m */,
-				6A8CFEEF2F18F6EC00FDD9A0 /* loveReadHack.m */,
-			);
-			path = apps;
-			sourceTree = "<group>";
-		};
-		B5105F4E2E6B278A00333727 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B5105F552E6B27FA00333727 /* HackHelperProtocolDefault.h */,
-				B5105F562E6B27FA00333727 /* HackHelperProtocolDefault.m */,
-			);
-			path = helpers;
-			sourceTree = "<group>";
-		};
-		B518593C2E6EF5D4004240CD /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				B518593E2E6EF716004240CD /* AppInspector.m */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		B518593D2E6EF5DD004240CD /* utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		B581601C2BE8949B001DDB9B /* apps */ = {
-			isa = PBXGroup;
-			children = (
-				B52FDA7C2E7E978D006A6E9D /* FolderPreviewPro.m */,
-				B5938B212DA7E45300FA82B0 /* ishotHack.m */,
-				B5369DCF2CC4C1DF00A81211 /* VidhubHack.m */,
-				B5369DCD2CC4C1D200A81211 /* irvueHack.m */,
-				B52BBA832CBFE1CE00F098A9 /* AirBuddyHack.m */,
-				B5EC63D72CBD39C700D92EEC /* AlfredHack.m */,
-				08869D142E1D125100B079A0 /* Bartender.m */,
-				B5732BF02C82CD5900EC9E11 /* IDAHack.m */,
-				9C99D64A2CB6CEF100B8A6D7 /* iStat7Hack.m */,
-				B5D0C0BA2C4B553500881398 /* ForkLiftHack.m */,
-				B5F06B1C2BEF591E0079E68D /* InfuseHack.m */,
-				38D1AC2B2B54D03B00E6CB9E /* HackProtocol.h */,
-				B5FE3B842BA2A571001AE437 /* TransmitHack.m */,
-				382A25842B6918DF0083F28C /* PasteHack.m */,
-				38B83E302B5505B300919735 /* TablePlusHack.m */,
-				08869D0E2E1AF15900B079A0 /* NotchNook.m */,
-				08869D102E1AF16B00B079A0 /* ProgressiveDownloader.m */,
-				B554D7BB2B63F2A300B7EFEA /* DevUtilsHack.m */,
-				B55407262B653DCB005C08E6 /* NavicatPremiumHack.m */,
-				B50E935D2BBD024F0073FEAA /* PaddleBaseHack.m */,
-				B5D2ED3E2BC0252D0030CBCA /* DevHack.m */,
-				B546A6572BC4F0CD0012338D /* ProxyManHack.m */,
-				B53F9DEC2C4AA4EC00A6B32D /* CleanShotXHack.m */,
-				B5A7D30E2C548B71003D4C7F /* HackProtocolDefault.h */,
-				B5A7D3102C548BAB003D4C7F /* HackProtocolDefault.m */,
-				9CE4C5CD2CCA7AC400593C78 /* ShottrHack.m */,
-				B5FD0D722DB20D1100989564 /* CleanMyMacHack.m */,
-				2847DC922E0E791A00D72519 /* DeskWidgetHack.m */,
-				2853DED82E17A39E0045A97A /* LiveWallpaperHack.m */,
-				2853DEDA2E17A41A0045A97A /* SenPlayerHack.m */,
-			);
-			path = apps;
-			sourceTree = "<group>";
-		};
 		B581601D2BE894A2001DDB9B /* common */ = {
-			isa = PBXGroup;
-			children = (
-				B52FDA752E7E971B006A6E9D /* InstructionDecoder.h */,
-				B52FDA762E7E971B006A6E9D /* InstructionDecoder.m */,
-				B59D6A2B2E503F010004D71D /* MockUbiquitousKeyValueStore.m */,
-				B59D6A292E503ED90004D71D /* MockUbiquitousKeyValueStore.h */,
-				38D1AC272B54C9C100E6CB9E /* Constant.h */,
-				38D1AC292B54CA4D00E6CB9E /* Constant.m */,
-				B58160162BE88569001DDB9B /* EncryptionUtils.h */,
-				B58160112BE88569001DDB9B /* EncryptionUtils.m */,
-				3816BBB62B54FED80051CF39 /* MemoryUtils.h */,
-				3816BBB82B54FF090051CF39 /* MemoryUtils.m */,
-				B5FECEAB2BC4FC29008916D6 /* common_ret.h */,
-				B5FECEAC2BC4FC29008916D6 /* common_ret.m */,
-				B552CA352C54AC200095C9B9 /* CommonRetOC.h */,
-				B552CA372C54AC450095C9B9 /* CommonRetOC.m */,
-				B5B89BCA2C5DD49B00F61EB0 /* MockCKContainer.h */,
-				B5B89BCC2C5DD4AB00F61EB0 /* MockCKContainer.m */,
-				B57F200D2C5DD6D700C87201 /* MockCKDatabase.h */,
-				B57F200F2C5DD70700C87201 /* MockCKDatabase.m */,
-				B5EAA9DF2C8C3FAF008C4089 /* URLSessionHook.h */,
-				B5EAA9E12C8C3FC3008C4089 /* URLSessionHook.m */,
-				B513ADD62CB95D0B00F5DC97 /* LocalizationManager.h */,
-				B513ADD82CB95D4100F5DC97 /* LocalizationManager.m */,
-				9CE4C5CF2CCA7C3600593C78 /* JSONUtils.h */,
-				9CE4C5D02CCA7C3600593C78 /* JSONUtils.m */,
-				B5822CA82CBFFC020062383F /* Logger.h */,
-				B57584382E0D698A001F7C9E /* MockKeychain.h */,
-				B575843A2E0D69AA001F7C9E /* MockKeychain.m */,
-			);
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
 			path = common;
-			sourceTree = "<group>";
-		};
-		B5A7D3122C54911C003D4C7F /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B5A7D3162C5491A0003D4C7F /* HackHelperProtocolDefault.h */,
-				B5A7D3152C5491A0003D4C7F /* HackHelperProtocolDefault.m */,
-				B5A7D3132C549130003D4C7F /* ForkLiftHelperHack.m */,
-				B5ABA1502DB21A5100EE97A0 /* CleanMyMacAgentHack.m */,
-				38E2ECD22DC48DCA00D76D10 /* ProxymanHelperHack.m */,
-			);
-			path = helpers;
 			sourceTree = "<group>";
 		};
 		B5BE2D572C52A4530056B3E2 /* apps */ = {
@@ -501,25 +216,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59D6A2A2E503ED90004D71D /* MockUbiquitousKeyValueStore.h in Headers */,
-				B52FDA782E7E971B006A6E9D /* InstructionDecoder.h in Headers */,
-				B5EAA9E02C8C3FAF008C4089 /* URLSessionHook.h in Headers */,
-				B513ADD72CB95D0B00F5DC97 /* LocalizationManager.h in Headers */,
-				B5FECEAD2BC4FC29008916D6 /* common_ret.h in Headers */,
-				B581601B2BE88569001DDB9B /* EncryptionUtils.h in Headers */,
-				B5A7D30F2C548B71003D4C7F /* HackProtocolDefault.h in Headers */,
-				B5B89BCB2C5DD49B00F61EB0 /* MockCKContainer.h in Headers */,
 				38350BF62B53F73A00DD52B3 /* dylib_dobby_hook.h in Headers */,
-				B57584392E0D698A001F7C9E /* MockKeychain.h in Headers */,
-				3816BBB72B54FED80051CF39 /* MemoryUtils.h in Headers */,
-				B5A7D3182C5491A0003D4C7F /* HackHelperProtocolDefault.h in Headers */,
-				B5822CA92CBFFC020062383F /* Logger.h in Headers */,
 				38350C022B53F78900DD52B3 /* tinyhook.h in Headers */,
-				B552CA362C54AC200095C9B9 /* CommonRetOC.h in Headers */,
-				9CE4C5D22CCA7C3600593C78 /* JSONUtils.h in Headers */,
-				38D1AC282B54C9C100E6CB9E /* Constant.h in Headers */,
-				38D1AC2C2B54D03B00E6CB9E /* HackProtocol.h in Headers */,
-				B57F200E2C5DD6D700C87201 /* MockCKDatabase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,25 +225,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5105F5B2E6B28F900333727 /* HackHelperProtocolDefault.h in Headers */,
-				B52FDA7A2E7E971B006A6E9D /* InstructionDecoder.h in Headers */,
-				B5105F5C2E6B28F900333727 /* HackProtocol.h in Headers */,
-				B5105F5D2E6B28F900333727 /* HackProtocolDefault.h in Headers */,
-				B5105EF32E6B1D7400333727 /* MockUbiquitousKeyValueStore.h in Headers */,
-				B5105EF42E6B1D7400333727 /* URLSessionHook.h in Headers */,
-				B5105EF52E6B1D7400333727 /* LocalizationManager.h in Headers */,
-				B5105EF62E6B1D7400333727 /* common_ret.h in Headers */,
-				B5105EF72E6B1D7400333727 /* EncryptionUtils.h in Headers */,
-				B5105EF92E6B1D7400333727 /* MockCKContainer.h in Headers */,
 				B5105EFA2E6B1D7400333727 /* dylib_dobby_hook.h in Headers */,
-				B5105EFB2E6B1D7400333727 /* MockKeychain.h in Headers */,
-				B5105EFC2E6B1D7400333727 /* MemoryUtils.h in Headers */,
-				B5105EFE2E6B1D7400333727 /* Logger.h in Headers */,
 				B5105EFF2E6B1D7400333727 /* tinyhook.h in Headers */,
-				B5105F002E6B1D7400333727 /* CommonRetOC.h in Headers */,
-				B5105F012E6B1D7400333727 /* JSONUtils.h in Headers */,
-				B5105F022E6B1D7400333727 /* Constant.h in Headers */,
-				B5105F042E6B1D7400333727 /* MockCKDatabase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +248,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				B581601D2BE894A2001DDB9B /* common */,
+				B5105EE42E6B122700333727 /* mac */,
 				B5105EE62E6B12D400333727 /* mac */,
 			);
 			name = dylib_dobby_hook_mac;
@@ -589,7 +272,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B5105EE62E6B12D400333727 /* mac */,
+				B5105EE92E6B12E000333727 /* ios */,
+				B5105F4C2E6B277500333727 /* ios */,
+				B581601D2BE894A2001DDB9B /* common */,
 			);
 			name = dylib_dobby_hook_ios;
 			productName = dylib_dobby_hook;
@@ -675,53 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57F20102C5DD70700C87201 /* MockCKDatabase.m in Sources */,
-				2847DC932E0E792000D72519 /* DeskWidgetHack.m in Sources */,
-				B5ABA1512DB21A5100EE97A0 /* CleanMyMacAgentHack.m in Sources */,
-				B50E935E2BBD024F0073FEAA /* PaddleBaseHack.m in Sources */,
-				B5B89BCD2C5DD4AB00F61EB0 /* MockCKContainer.m in Sources */,
-				B5D2ED3F2BC0252D0030CBCA /* DevHack.m in Sources */,
-				B5A7D3112C548BAB003D4C7F /* HackProtocolDefault.m in Sources */,
-				B546A6582BC4F0CD0012338D /* ProxyManHack.m in Sources */,
-				2853DEDB2E17A41F0045A97A /* SenPlayerHack.m in Sources */,
-				B58160172BE88569001DDB9B /* EncryptionUtils.m in Sources */,
-				B5A7D3142C549130003D4C7F /* ForkLiftHelperHack.m in Sources */,
-				08869D152E1D125100B079A0 /* Bartender.m in Sources */,
 				38350BF82B53F73A00DD52B3 /* dylib_dobby_hook.m in Sources */,
-				B5A7D3172C5491A0003D4C7F /* HackHelperProtocolDefault.m in Sources */,
-				B52FDA7D2E7E978D006A6E9D /* FolderPreviewPro.m in Sources */,
-				B53F9DED2C4AA4EC00A6B32D /* CleanShotXHack.m in Sources */,
-				B5EC63D82CBD39C700D92EEC /* AlfredHack.m in Sources */,
-				9C99D64B2CB6CEF100B8A6D7 /* iStat7Hack.m in Sources */,
-				B5369DCE2CC4C1D200A81211 /* irvueHack.m in Sources */,
-				382A25862B6918DF0083F28C /* PasteHack.m in Sources */,
-				B52FDA772E7E971B006A6E9D /* InstructionDecoder.m in Sources */,
-				B554D7BC2B63F2A300B7EFEA /* DevUtilsHack.m in Sources */,
-				B5D0C0BB2C4B553500881398 /* ForkLiftHack.m in Sources */,
-				B5F06B1D2BEF591E0079E68D /* InfuseHack.m in Sources */,
-				B5EAA9E22C8C3FC3008C4089 /* URLSessionHook.m in Sources */,
-				08869D112E1AF16B00B079A0 /* ProgressiveDownloader.m in Sources */,
-				B518593F2E6EF716004240CD /* AppInspector.m in Sources */,
-				B513ADD92CB95D4100F5DC97 /* LocalizationManager.m in Sources */,
-				B52BBA842CBFE1CE00F098A9 /* AirBuddyHack.m in Sources */,
-				08869D0F2E1AF15900B079A0 /* NotchNook.m in Sources */,
-				B55407272B653DCB005C08E6 /* NavicatPremiumHack.m in Sources */,
-				3816BBB92B54FF090051CF39 /* MemoryUtils.m in Sources */,
-				38B83E312B5505B300919735 /* TablePlusHack.m in Sources */,
-				9CE4C5CE2CCA7AC400593C78 /* ShottrHack.m in Sources */,
-				B5369DD02CC4C1DF00A81211 /* VidhubHack.m in Sources */,
-				B5938B222DA7E45300FA82B0 /* ishotHack.m in Sources */,
-				2853DED92E17A39E0045A97A /* LiveWallpaperHack.m in Sources */,
-				B59D6A2C2E503F010004D71D /* MockUbiquitousKeyValueStore.m in Sources */,
-				38E2ECD32DC48DCA00D76D10 /* ProxymanHelperHack.m in Sources */,
-				9CE4C5D12CCA7C3600593C78 /* JSONUtils.m in Sources */,
-				B552CA382C54AC450095C9B9 /* CommonRetOC.m in Sources */,
-				B5FECEAE2BC4FC29008916D6 /* common_ret.m in Sources */,
-				38D1AC2A2B54CA4D00E6CB9E /* Constant.m in Sources */,
-				B5FD0D732DB20D1100989564 /* CleanMyMacHack.m in Sources */,
-				B5FE3B862BA2A571001AE437 /* TransmitHack.m in Sources */,
-				B5732BF12C82CD5900EC9E11 /* IDAHack.m in Sources */,
-				B575843B2E0D69AA001F7C9E /* MockKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,24 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5105F592E6B28E000333727 /* HackHelperProtocolDefault.m in Sources */,
-				B5105F5A2E6B28E000333727 /* HackProtocolDefault.m in Sources */,
-				B5105F062E6B1D7400333727 /* MockCKDatabase.m in Sources */,
-				B52FDA792E7E971B006A6E9D /* InstructionDecoder.m in Sources */,
-				B5105F0A2E6B1D7400333727 /* MockCKContainer.m in Sources */,
-				B5105F0F2E6B1D7400333727 /* EncryptionUtils.m in Sources */,
 				B5105F132E6B1D7400333727 /* dylib_dobby_hook.m in Sources */,
-				B5105F202E6B1D7400333727 /* URLSessionHook.m in Sources */,
-				B5105F242E6B1D7400333727 /* LocalizationManager.m in Sources */,
-				B5105F2A2E6B1D7400333727 /* MemoryUtils.m in Sources */,
-				B5105F302E6B1D7400333727 /* MockUbiquitousKeyValueStore.m in Sources */,
-				B5105F5F2E6B298500333727 /* DevHack.m in Sources */,
-				B5105F332E6B1D7400333727 /* JSONUtils.m in Sources */,
-				B5105F362E6B1D7400333727 /* CommonRetOC.m in Sources */,
-				B5105F372E6B1D7400333727 /* common_ret.m in Sources */,
-				B5105F382E6B1D7400333727 /* Constant.m in Sources */,
-				6A8CFEF02F18F6EC00FDD9A0 /* loveReadHack.m in Sources */,
-				B5105F3E2E6B1D7400333727 /* MockKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +513,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -913,13 +537,14 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		B5105F442E6B1D7400333727 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PF34J7Z7XR;
@@ -941,6 +566,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -948,7 +574,6 @@
 		B5105F452E6B1D7400333727 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PF34J7Z7XR;
@@ -970,6 +595,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

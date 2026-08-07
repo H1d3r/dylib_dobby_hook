@@ -50,7 +50,8 @@ if [ "$BUILD_SYSTEM" = "xcode" ]; then
   XCODE_ARGS=(
     # -scheme "dylib_dobby_hook_$TARGET_OS"
     -target "dylib_dobby_hook_$TARGET_OS"
-    $ARCM_PARAM  
+    -configuration "$BUILD_TYPE"
+    $ARCM_PARAM
     # -derivedDataPath "$DERIVED_DATA_PATH"  
     SYMROOT="$DERIVED_DATA_PATH"
     ONLY_ACTIVE_ARCH=NO
@@ -132,9 +133,32 @@ else
   rm -rf "$BUILD_DIR"
   mkdir -p "$BUILD_DIR"
   cd "$BUILD_DIR"
-  cmake -DTARGET_OS="$TARGET_OS" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" -DENABLE_HIKARI="$ENABLE_HIKARI" -DCMAKE_OSX_SYSROOT="${CMAKE_OSX_SYSROOT}" "$PROJECT_ROOT"
-  make -j4
-  make install
+  # Swift 需要 Xcode 生成器 (CMake 原生 Swift 多架构 + 优雅支持)
+  if ! command -v xcodebuild >/dev/null 2>&1; then
+    echo "❌ Error: xcodebuild not found. Xcode is required for Swift support (CMake -G Xcode)."
+    exit 1
+  fi
+  echo "ℹ️ Using Xcode generator (Swift support, multi-arch)"
+  if [ "$TARGET_OS" = "mac" ]; then
+    ARCH_PARAM="-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64"
+    ARCHS_VALUE="x86_64 arm64"
+    CONFIG_DIR="$BUILD_TYPE"
+  else
+    ARCH_PARAM="-DCMAKE_OSX_ARCHITECTURES=arm64;arm64e"
+    ARCHS_VALUE="arm64 arm64e"
+    # Xcode 生成器: iOS 配置目录带 -iphoneos 后缀 (EFFECTIVE_PLATFORM_NAME)
+    CONFIG_DIR="$BUILD_TYPE-iphoneos"
+  fi
+  cmake -G Xcode -DTARGET_OS="$TARGET_OS" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" -DENABLE_HIKARI="$ENABLE_HIKARI" -DCMAKE_OSX_SYSROOT="${CMAKE_OSX_SYSROOT}" $ARCH_PARAM "$PROJECT_ROOT"
+  xcodebuild -project dylib_dobby_hook.xcodeproj -target dylib_dobby_hook -configuration "$BUILD_TYPE" build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO ARCHS="$ARCHS_VALUE"
+  DYLIB_PATH="$BUILD_DIR/$CONFIG_DIR/libdylib_dobby_hook.dylib"
+  if [ -f "$DYLIB_PATH" ]; then
+    mkdir -p "$PROJECT_ROOT/release/$TARGET_OS"
+    cp "$DYLIB_PATH" "$PROJECT_ROOT/release/$TARGET_OS/libdylib_dobby_hook.dylib"
+  else
+    echo "❌ Error: built dylib not found at $DYLIB_PATH"
+    exit 1
+  fi
   cd "$PROJECT_ROOT"
 fi
 

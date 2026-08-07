@@ -124,34 +124,34 @@
             "inject_type": "static"
         },
         {
-            "app_name": "IDA Professional 9.3",
+            "app_name": "IDA Professional 9.4",
             "app_path": "/Applications/$app_name.app",
             "app_bin_path": "$app_path/Contents/MacOS/ida",
             "inject_type": "none",
             "re_sign":false,
             "other_patches": {
-                "/Applications/IDA Professional 9.3.app/Contents/MacOS/libida.dylib": {
+                "/Applications/IDA Professional 9.4.app/Contents/MacOS/libida.dylib": {
                     "x86": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     },
                     "arm": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     }
                 },
-                "/Applications/IDA Professional 9.3.app/Contents/MacOS/libida32.dylib": {
+                "/Applications/IDA Professional 9.4.app/Contents/MacOS/libida32.dylib": {
                     "x86": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     },
                     "arm": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     }
                 },
-                "/Applications/IDA Professional 9.3.app/Contents/MacOS/libida64.dylib": {
+                "/Applications/IDA Professional 9.4.app/Contents/MacOS/libida64.dylib": {
                     "x86": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     },
                     "arm": {
-                        "ED FD 42 5C F9 78": "ED FD 42 CB F9 78"
+                        "29 f4 48 1f 79 6f 9f 66 f2 ff 13 cc 4a b5 b5 4f 60 84 5d b6 03 ba 2c 0b ac 8a 9b c4 b6 cb de fc 5c 62 bf c2 f5 ee 85 0a c4 5e a9 7a d3 47 e8 b5 6d ba 50 85 af 8c 8a ad 9c c2 ec 62 6c a7 8a 06 80 06 d6 58 f6 86 51 da 31 a0 a7 7c 65 a7 0e d7 3a 40 d5 3b 08 ed d4 03 c0 95 aa 0b cf fa 52 f3 13 eb ca ca aa 2c e5 02 4a 4e 2b 9a a7 0f c6 09 2f 38 ae 09 4d 71 e4 3f 76 90 b5 dd d3 e9 e4 f7": "a1 07 b7 1c 8a 08 ba 53 50 93 4f 7c f6 e8 1b e3 a2 4d c2 e3 5f 72 00 d8 0c bd 70 b3 7e d6 81 1d d2 14 6d 3c b7 e2 0a d1 9b 25 44 c0 ef 14 c5 c6 6f fb bd f2 26 ec 3f 3d 54 4c 04 38 53 03 ca 4a 71 79 29 93 40 02 2f 5d 50 94 8b cf 8a 60 30 7e 2c 19 63 29 e5 1a 52 96 dc 41 9e 40 fe f3 ef 7c 6f 01 5a 09 eb d9 79 e7 96 15 33 89 85 64 3e 66 6c 14 89 7f 9f 59 7e 11 f4 43 41 f4 96 d5 68 61"
                     }
                 }
             },
