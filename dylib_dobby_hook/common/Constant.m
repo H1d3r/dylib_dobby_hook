@@ -9,7 +9,9 @@
 #import "Constant.h"
 #import "tinyhook.h"
 #import <mach-o/dyld.h>
+#import <mach-o/getsect.h>
 #import <objc/runtime.h>
+#import <dlfcn.h>
 #if TARGET_OS_OSX
 #import <Cocoa/Cocoa.h>
 #endif
@@ -184,21 +186,51 @@ static BOOL _helper;
     
 }
 
+// 返回包含本代码所在镜像的 mach header (即当前 dylib)。
+// 只枚举本 dylib 的 __objc_classlist, 不要用 objc_copyClassList() 全进程扫描:
+// 在 +load 阶段对 Swift 应用做全进程类枚举会让运行时 realize 所有 Swift 类,
+// 触发其 metadata accessor 提前执行 (未就绪 -> 跳转 NULL -> EXC_BAD_ACCESS 0x0)。
+static const struct mach_header_64 *constant_image_header(void) {
+    Dl_info info;
+    if (dladdr((const void *)&constant_image_header, &info) == 0 || info.dli_fbase == NULL) {
+        return NULL;
+    }
+    return (const struct mach_header_64 *)info.dli_fbase;
+}
+
 + (NSArray<Class> *)getAllSubclassesOfClass:(Class)parentClass {
     NSMutableArray<Class> *subclasses = [NSMutableArray array];
-    
-    // 获取所有已加载的类
-    unsigned int numClasses = 0;
-    Class *classes = objc_copyClassList(&numClasses);
-    for (int i = 0; i < numClasses; i++) {
+
+    const struct mach_header_64 *imageHeader = constant_image_header();
+    if (imageHeader == NULL) {
+        return [subclasses copy];
+    }
+
+    uint8_t *classList = NULL;
+    unsigned long sectionSize = 0;
+    classList = getsectiondata(imageHeader, SEG_DATA, "__objc_classlist", &sectionSize);
+    if (classList == NULL) {
+        classList = getsectiondata(imageHeader, "__DATA_CONST", "__objc_classlist", &sectionSize);
+    }
+    if (classList == NULL || sectionSize == 0) {
+        return [subclasses copy];
+    }
+
+    union {
+        void *raw;
+        __unsafe_unretained Class *classes;
+    } classListCast;
+    classListCast.raw = classList;
+    Class *classes = classListCast.classes;
+    unsigned int numClasses = (unsigned int)(sectionSize / sizeof(Class));
+    for (unsigned int i = 0; i < numClasses; i++) {
         Class currentClass = classes[i];
         if ([self isSubclassOfClass:currentClass parentClass:parentClass] &&
             currentClass != parentClass) {
             [subclasses addObject:currentClass];
         }
     }
-    
-    free(classes);
+
     return [subclasses copy];
 }
 
@@ -307,8 +339,20 @@ void initEnv(void){
         initEnv();
         
         NSArray<Class> *hackClasses = [Constant getAllHackClasses];
-        NSLogger(@"Initiating doHack operation...");
+        // 稳定分区: 通用/兜底 Hack (isBaseHack) 排到末尾, 保证专用 Hack 优先匹配
+        NSMutableArray<Class> *specific = [NSMutableArray array];
+        NSMutableArray<Class> *base = [NSMutableArray array];
         for (Class hackClass in hackClasses) {
+            if ([hackClass isBaseHack]) {
+                [base addObject:hackClass];
+            } else {
+                [specific addObject:hackClass];
+            }
+        }
+        [specific addObjectsFromArray:base];
+        NSArray<Class> *orderedClasses = specific;
+        NSLogger(@"Initiating doHack operation...");
+        for (Class hackClass in orderedClasses) {
             NSLogger(@"Processing class - %@", NSStringFromClass(hackClass));
             if ([hackClass shouldInject:_currentAppName]) {
                 NSString *supportAppVersion = [hackClass getSupportAppVersion];

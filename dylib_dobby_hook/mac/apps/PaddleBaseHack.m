@@ -25,6 +25,8 @@
 
 @implementation PaddleBaseHack
 
++ (BOOL)isBaseHack { return YES; }
+
 //static IMP initWithProductIDIMP;
 static IMP dataTaskWithRequestIMP;
 static IMP _dataTaskWithRequestIMP;
