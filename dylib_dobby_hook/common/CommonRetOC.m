@@ -62,8 +62,8 @@
     return [target hasPrefix:appName];
 }
 
-+ (BOOL)isBaseHack {
-    return NO;
++ (NSInteger)sortOrder {
+    return 0;
 }
 
 

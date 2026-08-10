@@ -16,11 +16,11 @@
  */
 + (BOOL)shouldInject:(NSString *)target;
 /**
- * 是否为通用/兜底 Hack (如 StoreKit2BaseHack)。
- * 为 YES 的类会排在所有专用 Hack 之后执行, 避免在具体 App 的
- * Hack 之前被匹配到, 导致走错 Hook 路径。
+ * 执行排序值, 值越小越靠前执行, 默认 0。
+ * 通用/兜底 Hack (如 StoreKit2BaseHack) 返回较大值(如 250)排在末尾,
+ * 避免在具体 App 的 Hack 之前被匹配到, 导致走错 Hook 路径。
  */
-+ (BOOL)isBaseHack;
++ (NSInteger)sortOrder;
 
 - (void)firstLaunch;
 - (BOOL)hack;

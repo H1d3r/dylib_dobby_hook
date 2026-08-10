@@ -339,18 +339,13 @@ void initEnv(void){
         initEnv();
         
         NSArray<Class> *hackClasses = [Constant getAllHackClasses];
-        // 稳定分区: 通用/兜底 Hack (isBaseHack) 排到末尾, 保证专用 Hack 优先匹配
-        NSMutableArray<Class> *specific = [NSMutableArray array];
-        NSMutableArray<Class> *base = [NSMutableArray array];
-        for (Class hackClass in hackClasses) {
-            if ([hackClass isBaseHack]) {
-                [base addObject:hackClass];
-            } else {
-                [specific addObject:hackClass];
-            }
-        }
-        [specific addObjectsFromArray:base];
-        NSArray<Class> *orderedClasses = specific;
+        // 按 sortOrder 升序排序: 默认 0 的专用 Hack 在前, 兜底 Hack (较大值) 排末尾
+        NSArray<Class> *orderedClasses = [hackClasses sortedArrayUsingComparator:
+            ^NSComparisonResult(Class a, Class b) {
+                NSInteger oa = [a sortOrder], ob = [b sortOrder];
+                if (oa == ob) return NSOrderedSame;
+                return oa < ob ? NSOrderedAscending : NSOrderedDescending;
+            }];
         NSLogger(@"Initiating doHack operation...");
         for (Class hackClass in orderedClasses) {
             NSLogger(@"Processing class - %@", NSStringFromClass(hackClass));

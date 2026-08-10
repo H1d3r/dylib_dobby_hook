@@ -25,7 +25,7 @@
 
 @implementation PaddleBaseHack
 
-+ (BOOL)isBaseHack { return YES; }
++ (NSInteger)sortOrder { return 250; }
 
 //static IMP initWithProductIDIMP;
 static IMP dataTaskWithRequestIMP;
