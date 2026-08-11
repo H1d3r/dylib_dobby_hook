@@ -20,7 +20,14 @@
         __func__,                               \
         __LINE__, ##__VA_ARGS__)
 #else
-#define NSLogger(fmt, ...) do {} while (0)
+// if (0) 分支保留参数 "被引用", Release 下消除仅日志用变量的 unused 告警
+#define NSLogger(fmt, ...)                                         \
+    do {                                                           \
+        if (0) {                                                   \
+            NSLog((@"🔍 Hack Debug: %s [:%d] " fmt),               \
+                  __func__, __LINE__, ##__VA_ARGS__);              \
+        }                                                          \
+    } while (0)
 #endif
 
 #ifdef DEBUG
@@ -29,8 +36,12 @@
         __PRETTY_FUNCTION__,                       \
         __LINE__, ##__VA_ARGS__)
 #else
-#define CLogger(fmt, ...) \
-    do {                  \
+#define CLogger(fmt, ...)                                  \
+    do {                                                   \
+        if (0) {                                           \
+            printf("🔍 Hack Debug: %s [:%d] " fmt "\n",    \
+                __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); \
+        }                                                  \
     } while (0)
 #endif
 

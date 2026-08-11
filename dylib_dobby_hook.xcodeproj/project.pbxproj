@@ -506,7 +506,6 @@
 				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
 					"$(PROJECT_DIR)/libs/mac",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -530,7 +529,6 @@
 				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
 					"$(PROJECT_DIR)/libs/mac",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -555,9 +553,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
 					"$(PROJECT_DIR)/libs/ios",
-					"$(PROJECT_DIR)/libs/mac",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				ONLY_ACTIVE_ARCH = NO;
@@ -584,9 +580,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
 					"$(PROJECT_DIR)/libs/ios",
-					"$(PROJECT_DIR)/libs/mac",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				ONLY_ACTIVE_ARCH = NO;

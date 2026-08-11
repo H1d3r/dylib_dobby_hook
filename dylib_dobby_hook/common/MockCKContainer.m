@@ -72,7 +72,7 @@
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier {
-    NSLogger(@"initWithIdentifier identifier = %@",identifier);
+    // NSLogger(@"initWithIdentifier identifier = %@",identifier);
     if (self) {
         _identifier = [identifier copy];
         _privateDatabase = [[MockCKDatabase alloc] initDatabase];
@@ -81,18 +81,18 @@
     return self;
 }
 - (CKDatabase *)privateCloudDatabase {
-    NSLogger(@"privateCloudDatabase");
+    // NSLogger(@"privateCloudDatabase");
     return (CKDatabase *)self.privateDatabase;
 }
 
 - (CKDatabase *)publicCloudDatabase {
-    NSLogger(@"publicCloudDatabase");
+    // NSLogger(@"publicCloudDatabase");
     return (CKDatabase *)self.publicDatabase;
 }
 
 
 - (void)accountStatusWithCompletionHandler:(void (NS_SWIFT_SENDABLE ^)(CKAccountStatus accountStatus, NSError * error))completionHandler{
-    NSLogger(@"accountStatusWithCompletionHandler");
+    // NSLogger(@"accountStatusWithCompletionHandler");
     CKAccountStatus mockAccountStatus = CKAccountStatusCouldNotDetermine;
     NSError *mockError = nil;
    

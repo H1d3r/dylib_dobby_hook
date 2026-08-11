@@ -49,6 +49,7 @@ if [ "$BUILD_SYSTEM" = "xcode" ]; then
   DERIVED_DATA_PATH="$PROJECT_ROOT/xcode-build"
   XCODE_ARGS=(
     # -scheme "dylib_dobby_hook_$TARGET_OS"
+    -quiet
     -target "dylib_dobby_hook_$TARGET_OS"
     -configuration "$BUILD_TYPE"
     $ARCM_PARAM
@@ -82,7 +83,7 @@ if [ "$BUILD_SYSTEM" = "xcode" ]; then
     echo "ℹ️ Hikari disabled for Xcode."
   fi
   rm -rf "$DERIVED_DATA_PATH"
-  xcodebuild clean -target "dylib_dobby_hook_$TARGET_OS" -configuration "$BUILD_TYPE" SYMROOT="$DERIVED_DATA_PATH"
+  xcodebuild -quiet clean -target "dylib_dobby_hook_$TARGET_OS" -configuration "$BUILD_TYPE" SYMROOT="$DERIVED_DATA_PATH"
   xcodebuild "${XCODE_ARGS[@]}"
   PRODUCT_DYLIB="$DERIVED_DATA_PATH/Build/Products/$BUILD_TYPE/libdylib_dobby_hook.dylib"
   echo "✅ Build completed. Product located at: $PRODUCT_DYLIB"
@@ -150,7 +151,7 @@ else
     CONFIG_DIR="$BUILD_TYPE-iphoneos"
   fi
   cmake -G Xcode -DTARGET_OS="$TARGET_OS" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" -DENABLE_HIKARI="$ENABLE_HIKARI" -DCMAKE_OSX_SYSROOT="${CMAKE_OSX_SYSROOT}" $ARCH_PARAM "$PROJECT_ROOT"
-  xcodebuild -project dylib_dobby_hook.xcodeproj -target dylib_dobby_hook -configuration "$BUILD_TYPE" build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO ARCHS="$ARCHS_VALUE"
+  xcodebuild -quiet -project dylib_dobby_hook.xcodeproj -target dylib_dobby_hook -configuration "$BUILD_TYPE" build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO ARCHS="$ARCHS_VALUE"
   DYLIB_PATH="$BUILD_DIR/$CONFIG_DIR/libdylib_dobby_hook.dylib"
   if [ -f "$DYLIB_PATH" ]; then
     mkdir -p "$PROJECT_ROOT/release/$TARGET_OS"

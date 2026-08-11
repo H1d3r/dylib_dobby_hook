@@ -27,20 +27,10 @@
 - (instancetype)init {
     if (self = [super init]) {
         _backingStore = [[NSUserDefaults alloc] initWithSuiteName:@"MockUbiquitousKeyValueStore"];
-        // [self printBackingStoreInfo];
     }
     return self;
 }
 
-// 打印 plist 文件路径 + defaults 命令
-- (void)printBackingStoreInfo {
-    NSString *plistPath = [NSString stringWithFormat:@"%@/Library/Preferences/%@.plist",
-                           NSHomeDirectory(),
-                           @"MockUbiquitousKeyValueStore"];
-    NSString *command = [NSString stringWithFormat:@"defaults export \"%@\" -", plistPath];
-    NSLogger(@"[MockUbiquitousKeyValueStore] export command: %@", command);
-
-}
 - (BOOL)boolForKey:(NSString *)key {
     id obj = [self objectForKey:key];
     return [obj respondsToSelector:@selector(boolValue)] ? [obj boolValue] : NO;
@@ -68,7 +58,7 @@
 
 - (id)objectForKey:(NSString *)key {
     id obj = [_backingStore objectForKey:key];
-    NSLogger(@"[Mock] objectForKey:%@ => %@", key, obj);
+    // NSLogger(@"[Mock] objectForKey:%@ => %@", key, obj);
     return obj;
 }
 
@@ -93,17 +83,17 @@
 }
 
 - (void)setObject:(id)obj forKey:(NSString *)key {
-    NSLogger(@"[Mock] setObject:%@ forKey:%@", obj, key);
+    // NSLogger(@"[Mock] setObject:%@ forKey:%@", obj, key);
     [_backingStore setObject:obj forKey:key];
 }
 
 - (void)removeObjectForKey:(NSString *)key {
-    NSLogger(@"[Mock] removeObjectForKey:%@", key);
+    // NSLogger(@"[Mock] removeObjectForKey:%@", key);
     [_backingStore removeObjectForKey:key];
 }
 
 - (BOOL)synchronize {
-    NSLogger(@"[Mock] synchronize");
+    // NSLogger(@"[Mock] synchronize");
     // return [_backingStore synchronize];
     return YES;
 }

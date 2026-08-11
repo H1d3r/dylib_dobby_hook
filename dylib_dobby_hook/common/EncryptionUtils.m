@@ -146,35 +146,6 @@
 
 #if TARGET_OS_OSX
 + (BOOL)isCodeSignatureValid {
-    
-    SecCodeRef code = NULL;
-    OSStatus status = SecCodeCopySelf(kSecCSDefaultFlags, &code);
-    if (status != errSecSuccess) {
-        NSLogger(@"[Error] Failed to get current app code: %d", (int)status);
-        return NO;
-    }
-
-    CFDictionaryRef csInfo = NULL;
-    status = SecCodeCopySigningInformation(code, kSecCSSigningInformation, &csInfo);
-    if (status != errSecSuccess) {
-        NSLogger(@"[Error] SecCodeCopySigningInformation failed with status = %d", (int)status);
-        if (code) CFRelease(code);
-        return NO;
-    }
-
-    // 检查签名是否有效
-    SecCSFlags flags = 0;
-    CFNumberRef flagsNumber = (CFNumberRef)CFDictionaryGetValue(csInfo, kSecCodeInfoFlags);
-    if (flagsNumber == NULL) {
-        NSLogger(@"[Error] kSecCodeInfoFlags is nil");
-        CFRelease(csInfo);
-        CFRelease(code);
-        return NO;
-    }
-
-    CFNumberGetValue(flagsNumber, kCFNumberSInt32Type, &flags);
-    NSLogger(@"Flags: %d", flags);
-
 //    flags : https://developer.apple.com/documentation/security/seccodesignatureflags/forcekill?language=objc
 //    codesign -d -vvv /xxx
 //    0x0    none    没有额外标志
@@ -188,27 +159,21 @@
 //    0x2000    kSecCodeSignatureLibraryValidation    启用动态库验证，防止加载未签名或不受信任的动态库
 //    0x10000    kSecCodeSignatureRuntime    启用 Hardened Runtime，增加代码完整性检查，防止调试、代码注入等攻击
 //    0x20000    kSecCodeSignatureLinkerSigned    代码已被 链接器（Linker）签名，适用于某些特殊情况下的代码签名
-    
-    const int CS_VALID = 0x00000001;   // 签名是有效的
-    const int CS_RUNTIME = 0x00010000; // 启用了 "hardened runtime" 的应用
-    const int CS_HARD = 0x00000002;    // 强制代码签名（hardened code）
-
-    if (flags & CS_HARD) {
-        NSLogger(@"App has hardened code signature.");
-    }
-
-    if (!(flags & CS_VALID) && !(flags & CS_RUNTIME)) {
-        NSLogger(@"[Error] App signature is not valid or does not have hardened runtime.");
-        CFRelease(csInfo);
-        CFRelease(code);
-        return NO;
-    }
-
-    NSLogger(@"Code signature is valid.");
-    
-    CFRelease(csInfo);
-    CFRelease(code);
-    return YES;
+//    const int CS_VALID = 0x00000001;   // 签名是有效的
+//    const int CS_RUNTIME = 0x00010000; // 启用了 "hardened runtime" 的应用
+//    const int CS_HARD = 0x00000002;    // 强制代码签名（hardened code）
+    SecCodeRef c = NULL;
+    CFDictionaryRef i = NULL;
+    SecCodeCopySelf(0, &c);
+    SecCodeCopySigningInformation(c, kSecCSSigningInformation, &i);
+    NSDictionary *info = (__bridge NSDictionary *)i;
+    NSNumber *flagsNum = info[(__bridge NSString *)kSecCodeInfoFlags];
+    unsigned int flags = [flagsNum unsignedIntValue];
+    BOOL isRuntime = (flags & kSecCodeSignatureRuntime) != 0; // 值为 0x10000
+    NSLogger(@"Is Runtime enabled? %@", isRuntime ? @"YES" : @"NO");
+    CFRelease(c);
+    CFRelease(i);
+    return isRuntime;
 }
 #endif
 

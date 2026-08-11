@@ -30,11 +30,10 @@ void ShowPremiumPopup(NSString *titleText,NSString *messageText,NSString *button
             }
             if (!scene) return;
             blockWindow = [[UIWindow alloc] initWithWindowScene:scene];
-        } else {
-            blockWindow = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
         }
 
-        blockWindow.frame = UIScreen.mainScreen.bounds;
+        CGRect screenBounds = scene.screen.bounds;
+        blockWindow.frame = screenBounds;
         blockWindow.windowLevel = UIWindowLevelAlert + 9999;
         blockWindow.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.45];
 
@@ -43,7 +42,7 @@ void ShowPremiumPopup(NSString *titleText,NSString *messageText,NSString *button
         blockWindow.rootViewController = root;
         [blockWindow makeKeyAndVisible];
 
-        UIView *card = [[UIView alloc] initWithFrame:CGRectMake(30, 0, UIScreen.mainScreen.bounds.size.width - 60, 300)];
+        UIView *card = [[UIView alloc] initWithFrame:CGRectMake(30, 0, screenBounds.size.width - 60, 300)];
         card.center = root.view.center;
         card.backgroundColor = [UIColor colorWithRed:0.10 green:0.11 blue:0.16 alpha:1.0];
         card.layer.cornerRadius = 26;

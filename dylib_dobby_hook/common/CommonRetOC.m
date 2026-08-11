@@ -159,12 +159,15 @@
 }
 
 #if TARGET_OS_OSX
-- (void)hook_AllSecCode:teamIdentifier{
+- (void)hook_AllSecCode:(NSString*)teamIdentifier{
     static dispatch_once_t onceToken;
     static BOOL hasHooked = NO;
     if (hasHooked) {
         NSLogger(@"[Warning] hook_AllSecCode called multiple times! Skip hooking. teamIdentifier = %@", teamIdentifier);
         return;
+    }
+    if (teamIdentifier.length == 0) {
+        teamIdentifier = @"FUCKFUCKME";
     }
     dispatch_once(&onceToken, ^{
         hasHooked = YES;
@@ -188,7 +191,7 @@
 //    SecRequirementEvaluate
 }
 #else
-- (void)hook_AllSecCode:teamIdentifier{
+- (void)hook_AllSecCode:(NSString*)teamIdentifier{
     
 }
 #endif
