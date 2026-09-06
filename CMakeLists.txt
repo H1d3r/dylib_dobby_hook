@@ -129,7 +129,11 @@ if (ENABLE_HIKARI)
     string(REPLACE "SHELL:" "" _HIKARI_FLAGS_STR "${_HIKARI_FLAGS}")
     string(REPLACE ";" " " _HIKARI_FLAGS_STR "${_HIKARI_FLAGS_STR}")
     message(STATUS "🔒 Hikari LLVM flags: ${_HIKARI_FLAGS_STR}")
-    target_compile_options(${PROJECT_NAME} PRIVATE ${_HIKARI_FLAGS})
+    # ⚠️ Hikari 仅支持 C/C++/ObjC/ObjC++，必须排除 Swift，否则 swiftc 会报
+    #    "Driver threw unknown argument: '-hikari'"
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        "$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:${_HIKARI_FLAGS}>"
+    )
 endif()
 
 

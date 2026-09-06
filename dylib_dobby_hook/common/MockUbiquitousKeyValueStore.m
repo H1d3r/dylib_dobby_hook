@@ -50,7 +50,14 @@
     id obj = [self objectForKey:key];
     return [obj respondsToSelector:@selector(doubleValue)] ? [obj doubleValue] : 0;
 }
-
+- (NSData *)dataForKey:(NSString *)key {
+    id obj = [self objectForKey:key];
+    return obj;
+}
+- (NSDictionary *)dictionaryForKey:(NSString *)key {
+    id obj = [self objectForKey:key];
+    return obj;
+}
 - (NSString *)stringForKey:(NSString *)key {
     id obj = [self objectForKey:key];
     return [obj isKindOfClass:[NSString class]] ? obj : [obj description];
@@ -61,7 +68,9 @@
     // NSLogger(@"[Mock] objectForKey:%@ => %@", key, obj);
     return obj;
 }
-
+- (void)setData:(NSData *)value forKey:(NSString *)key {
+    [self setObject:value forKey:key];
+}
 - (void)setBool:(BOOL)value forKey:(NSString *)key {
     [self setObject:@(value) forKey:key];
 }

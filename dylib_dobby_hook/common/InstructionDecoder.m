@@ -8,6 +8,8 @@
 #include "InstructionDecoder.h"
 #import <Foundation/Foundation.h>
 #import "Logger.h"
+#import "tinyhook.h"
+#include <stdint.h>
 
 static BOOL read_bytes(const void *addr, void *buf, size_t len) {
     if (!addr || !buf) return NO;
@@ -108,4 +110,33 @@ uint64_t decode_call_target_x86_64(const uint8_t *instr_addr) {
     }
 
     return 0;
+}
+
+#pragma mark - call/BL redirect (arch-adaptive)
+
+// Redirect the call/BL at instr_addr to new_target (arch-adaptive encoding + write_mem).
+// Verifies the instruction at instr_addr is actually a call/BL before patching.
+int redirect_call(void *instr_addr, void *new_target) {
+#if defined(__x86_64__)
+    if (decode_call_target_x86_64((const uint8_t *)instr_addr) == 0) return -3;  // not a call, bail
+    // call rel32: E8 imm32, target = (instr+5) + imm32
+    int64_t disp = (int64_t)((uintptr_t)new_target - ((uintptr_t)instr_addr + 5));
+    if (disp < INT32_MIN || disp > INT32_MAX) return -1;
+    uint8_t patch[5] = { 0xE8 };
+    *(int32_t*)&patch[1] = (int32_t)disp;
+    return write_mem(instr_addr, patch, 5);
+#elif defined(__arm64__) || defined(__aarch64__)
+    if (decode_bl_b_target_arm64(instr_addr) == 0) return -3;  // not a BL, bail
+    // BL imm26: 0x94000000 | (imm26 & 0x3FFFFFF), offset = imm26 << 2
+    int64_t offset = (int64_t)((uintptr_t)new_target - (uintptr_t)instr_addr);
+    if (offset % 4 != 0) return -1;
+    int32_t imm26 = (int32_t)(offset >> 2);
+    if (imm26 < -0x2000000 || imm26 > 0x1FFFFFF) return -1;
+    uint32_t patch = 0x94000000u | ((uint32_t)imm26 & 0x3FFFFFFu);
+    return write_mem(instr_addr, &patch, 4);
+#else
+    (void)instr_addr;
+    (void)new_target;
+    return -2;
+#endif
 }

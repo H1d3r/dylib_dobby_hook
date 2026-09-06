@@ -1,6 +1,6 @@
 ---
 name: dylib-dobby-hook
-description: Dylib injection hook framework for macOS/iOS. Provides C function hooking (tiny_hook), dyld symbol interposition (tiny_interpose), symbol resolution (symtbl_solve/symexp_solve/symstub_solve), memory patching (write_mem), Objective-C method swizzling (MemoryUtils), and Swift ABI-compatible hooking (SWIFTCALL/SWIFT_CONTEXT attributes).
+description: Dylib injection hook framework for macOS/iOS. Provides C function hooking (tiny_hook), dyld symbol interposition (tiny_interpose), symbol resolution (symtbl_solve/symexp_solve/symstub_solve), memory patching (write_mem), instruction decode/redirect (InstructionDecoder: decode_call_target_x86_64 / decode_bl_b_target_arm64 / redirect_call), Objective-C method swizzling (MemoryUtils), and Swift ABI-compatible hooking (SWIFTCALL/SWIFT_CONTEXT attributes).
 version: 1.0
 language: en
 tags: [dylib, dobby, hook, macOS, iOS, injection, tinyhook, MemoryUtils, Swift]
@@ -16,6 +16,7 @@ Extension pattern: subclass `HackProtocolDefault`, implement `+getAppName`, `+ge
 | File | Contents |
 |------|----------|
 | `tinyhook.h` | `tiny_hook`, `tiny_interpose`, `symtbl_solve`, `symexp_solve`, `symstub_solve`, `write_mem` |
+| `InstructionDecoder.h` | `decode_call_target_x86_64`, `decode_bl_b_target_arm64`, `decode_cond_branch_target_arm64`, `redirect_call` |
 | `MemoryUtils.h` | OC method hook, signature scan, address translation utilities |
 | `CommonRetOC.m` | `ret0`/`ret1`/`ret` stubs, CloudKit/Keychain/SecCode hooks |
 | `mac/apps/*.m`, `ios/apps/*.m` | Reference app hook implementations |
@@ -191,6 +192,26 @@ uint8_t patch[] = {0xB8, 0x01, 0x00, 0x00, 0x00}; // mov eax, 1
 #endif
 write_mem((void *)targetAddr, patch, sizeof(patch));
 ```
+
+## Call/BL Redirect
+
+When you only need to redirect a single `call`/`BL` instruction (e.g. swap one callee of a
+function) instead of hooking the whole target, use `redirect_call` from `InstructionDecoder`.
+It is arch-adaptive (x86_64: `E8 rel32`; arm64: `BL imm26`), verifies the instruction at the
+site is actually a call/BL before patching, and writes bytes via `write_mem`.
+
+```objc
+// Redirect the call/BL at call_addr to your replacement function.
+// Returns write_mem's result (0 = success, non-zero = failure);
+// -3 = instruction at call_addr is not a recognized call/BL (bail, bytes untouched).
+int rc = redirect_call((void *)call_addr, (void *)my_replacement);
+```
+
+Decoders `decode_call_target_x86_64` / `decode_bl_b_target_arm64` / `decode_cond_branch_target_arm64`
+are read-only diagnostics that read an instruction and return its absolute target address;
+`redirect_call` already performs the check internally, so callers normally do not call them.
+Replacement functions must preserve call semantics (return normally; do NOT pop the return
+address), since the patched instruction remains a `call`/`BL`.
 
 ## Best Practices
 

@@ -22,4 +22,11 @@ uint64_t decode_cond_branch_target_arm64(const void *instr_addr);
 
 uint64_t decode_call_target_x86_64(const uint8_t *instr_addr);
 
+#pragma mark - call/BL redirect (arch-adaptive)
+
+// Redirect the call (x86_64: E8 rel32) or BL (arm64: imm26) at instr_addr to new_target.
+// Encodes and writes the patch via write_mem. Returns write_mem's result (0 on success,
+// non-zero on failure; -1 means out of range / not encodable).
+int redirect_call(void *instr_addr, void *new_target);
+
 #endif
